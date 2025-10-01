@@ -1,9 +1,6 @@
 package com.example.tikrai_pirmas;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,30 +15,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        TextView textView = findViewById(R.id.textView);
-        Button button = findViewById(R.id.button);
-
-        Button colorButton = findViewById(R.id.colorButton);
-
-        if (button != null && textView != null) {
-            button.setOnClickListener(v -> {
-                textView.setText("TIK juokaujuuuuu");
-            });
-        }
-
-        if (colorButton != null && textView != null) {
-            colorButton.setOnClickListener(v -> {
-
-                textView.setTextColor(Color.GREEN);
-
-            });
-        }
     }
 }
